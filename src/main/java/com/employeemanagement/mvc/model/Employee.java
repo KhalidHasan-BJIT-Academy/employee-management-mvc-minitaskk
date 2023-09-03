@@ -3,27 +3,30 @@ package com.employeemanagement.mvc.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "employees")
+@Table
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
     private  String lastName;
 
-    public Employee(long id, String firstName, String lastName) {
+    public Employee(Long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public long getId() {
+    public Employee() {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
